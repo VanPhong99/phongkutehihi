@@ -15,6 +15,7 @@ namespace LeVanPhong_Lab3.ViewModels
         [FutureDate]
         public string Date { get; set; }
         [Required]
+        [ValidTime]
         public string Time { get; set; }
         [Required]
         public byte Category { get; set; }
