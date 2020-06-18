@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using LeVanPhong_Lab3.ViewModels;
-using LeVanPhong_Lab3.CoursesViewModels;
+
 
 namespace LeVanPhong_Lab3.Controllers
 {
@@ -23,9 +23,9 @@ namespace LeVanPhong_Lab3.Controllers
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
-            var viewModel = new CourseViewModel
+            var viewModel = new CoursesViewModel
             {
-                UpcommingCourses = upcommingCourse,
+                UpcomingCourses = upcomingCourses,
                 ShowAction = User.Identity.IsAuthenticated
             };
             return View(viewModel);
